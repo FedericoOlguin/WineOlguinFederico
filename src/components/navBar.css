@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+  background-color: aquamarine;
+  width: 100%;
+  align-items: stretch;
+}
+.nav__containerLogo {
+  display: flex;
+  width: 20rem;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.nav__containerLogo h1 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+.nav__ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+.nav__ul li {
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.nav__ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+  display: flex;
+  padding: 1rem;
+  transition: all 0.5s ease;
+}
+.nav__ul li a:hover {
+  background-color: rgb(71, 70, 70);
+  border-radius: 5px;
+  color: white;
+}
+.nav__ul li a:active {
+    background-color: blue;
+}
