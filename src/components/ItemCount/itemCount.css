@@ -1,0 +1,15 @@
+.card {
+  background-color: brown;
+  width: 20rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+
+.cart__botones {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
