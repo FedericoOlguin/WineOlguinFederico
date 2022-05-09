@@ -20,11 +20,11 @@ function ItemCount(props) {
             <h2>Nombre Producto</h2>
             <p>Stock: {props.stock}</p>
             <div className="cart__botones">
-                <button onClick={() => count > 1 && onAdd(false)} >-</button>
+                <button className="btn restar" onClick={() => count > 1 && onAdd(false)} >-</button>
                 <h2>{count}</h2>
-                <button onClick={() => props.stock > count ? onAdd(true) : alert("No puedes agregar mas productos por falta de stock")} >+</button>
+                <button className="btn sumar" onClick={() => props.stock > count ? onAdd(true) : alert("No puedes agregar mas productos por falta de stock")} >+</button>
             </div>
-            <button onClick={() => props.addToCart(count)}>Add to cart</button>
+            <button className="btn__add" onClick={() => props.addToCart(count)}>Add to cart</button>
         </div>
     )
 }
