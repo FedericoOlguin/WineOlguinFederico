@@ -3,6 +3,7 @@
   background-color: aquamarine;
   width: 100%;
   align-items: stretch;
+  margin-bottom: 12rem;
 }
 .nav__containerLogo {
   display: flex;

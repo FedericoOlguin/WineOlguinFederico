@@ -22,12 +22,12 @@
 
 .sumar:hover {
   background-color: green;
-  transform: scale(1.05, 1.05);
+  transform: scale(1.06, 1.06);
 }
 
 .restar:hover {
   background-color: red;
-  transform: scale(1.05, 1.05);
+  transform: scale(1.06, 1.06);
 }
 .btn__add {
   padding: 0.5rem;
