@@ -1,0 +1,22 @@
+.detalle {
+  display: flex;
+  max-height: 25rem;
+  margin: 5rem 0;
+  background-color: rgb(70, 67, 67);
+}
+
+.detalle__Title {
+  /* background-color: aqua; */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.dettalle__igmContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.detalle__bodyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}

@@ -1,27 +1,15 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer"
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting="Mensaje pasado mediante props"/>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <NavBar />
+      <ItemListContainer greeting="Mensaje pasado mediante props" />
+      <ItemDetailContainer />
     </div>
   );
 }

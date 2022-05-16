@@ -10,7 +10,7 @@ function Item({ prod }) {
             <h2>{prod.title}</h2>
             <img className="productoImg" src={prod.pictureUrl} alt="prodPhoto" />
             <p>Price: ${prod.price}</p>
-            <p>Description: {prod.description}</p>
+            {/* <p>Description: {prod.description}</p> */}
         </div>
     )
 
