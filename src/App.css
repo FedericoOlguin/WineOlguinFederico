@@ -6,6 +6,7 @@
 }
 body {
   box-sizing: border-box;
+  background-color: #28303f;
 }
 
 .App-logo {
