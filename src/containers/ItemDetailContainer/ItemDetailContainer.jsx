@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Datos from "../../media/Datos"
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 const getDatos = new Promise((resolve, reject) => {
@@ -8,12 +9,13 @@ const getDatos = new Promise((resolve, reject) => {
 })
 
 function ItemDetailContainer() {
-
-    const [data, setData] = useState()
+    const { id } = useParams()
+    console.log(id);
+    const [data, setData] = useState("id")
 
     useEffect(() => {
         getDatos
-            .then(res => setData(res.find(element => element.id === 1)))
+            .then(res => setData(res.find(element => element.id.toString() === id)))
             .catch(err => console.log(err))
             .finally(() => {
                 console.log("final de promesa")

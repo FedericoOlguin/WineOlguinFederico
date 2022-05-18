@@ -2,6 +2,7 @@ import "./itemDetail.css"
 
 
 
+
 function ItemDetail({ prod }) {
 
     return (
