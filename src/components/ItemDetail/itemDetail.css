@@ -24,3 +24,13 @@
 .detalle__bodyContainer p {
   margin: 0;
 }
+
+.detalle__btn {
+  padding: 0.5rem 1rem;
+  background-color: rgba(28, 28, 119, 0.747);
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  width: 40%;
+  align-self: center;
+}

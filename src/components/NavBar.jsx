@@ -27,7 +27,7 @@ function NavBar() {
             </div>
             <div className="nav__containerLinks">
                 <ul className="nav__ul">
-                    <li> <LinkRouter to="#"><ShoppingCartIcon /></LinkRouter></li>
+                    <li> <LinkRouter to="/cart"><ShoppingCartIcon /></LinkRouter></li>
                 </ul>
 
             </div>
