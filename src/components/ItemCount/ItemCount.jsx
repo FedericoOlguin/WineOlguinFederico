@@ -17,8 +17,6 @@ function ItemCount(props) {
 
     return (
         <div className="card">
-            <h2>Nombre Producto</h2>
-            <p>Stock: {props.stock}</p>
             <div className="cart__botones">
                 <button className="btn restar" onClick={() => count > 1 && onAdd(false)} >-</button>
                 <h2>{count}</h2>

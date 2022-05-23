@@ -20,3 +20,7 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
+
+.detalle__bodyContainer p {
+  margin: 0;
+}

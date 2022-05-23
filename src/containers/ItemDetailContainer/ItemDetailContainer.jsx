@@ -21,15 +21,17 @@ function ItemDetailContainer() {
                 console.log("final de promesa")
             })
 
-    }, [])
-
+    }, [id])
+    function addToCart(cant) {
+        alert(`Has agregado ${cant} productos al carrito`)
+    }
 
     return (
         <>
             {console.log(data)}
             {
                 data ?
-                    <ItemDetail prod={data ? data : ""} /> :
+                    <ItemDetail prod={data ? data : ""} addToCart={addToCart} /> :
                     <></>
             }
         </>

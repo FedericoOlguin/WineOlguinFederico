@@ -44,9 +44,9 @@ function ItemListContainer({ greeting }) {
 
     }, [categ])
 
-    function addToCart(cant) {
-        alert(`Has agregado ${cant} productos al carrito`)
-    }
+    // function addToCart(cant) {
+    //     alert(`Has agregado ${cant} productos al carrito`)
+    // }
 
     // console.log(productos);
 
@@ -54,7 +54,7 @@ function ItemListContainer({ greeting }) {
         <>
             <h1>{greeting}</h1>
 
-            <ItemCount stock={10} initial={1} addToCart={addToCart} />
+            {/* <ItemCount stock={10} initial={1} addToCart={addToCart} /> */}
             <ItemList productos={productos} />
         </>
     )
