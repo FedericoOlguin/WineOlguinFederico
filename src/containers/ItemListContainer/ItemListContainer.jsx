@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import ItemCount from "../../components/ItemCount/ItemCount"
 import ItemList from "../../components/Item/ItemList"
-import Datos from "../../media/Datos"
+import Datos from "../../assets/Datos"
 import { useParams } from "react-router-dom"
 
 

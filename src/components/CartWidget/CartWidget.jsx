@@ -1,4 +1,4 @@
-import Logo from "../../media/LogoWine.svg"
+import Logo from "../../assets/imagenes/LogoWine.svg"
 import "./cartWidget.css"
 
 

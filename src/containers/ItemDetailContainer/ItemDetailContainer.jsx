@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Datos from "../../media/Datos"
+import Datos from "../../assets/Datos"
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 const getDatos = new Promise((resolve, reject) => {
     setTimeout(() => {
