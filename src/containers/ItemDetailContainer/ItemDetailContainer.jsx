@@ -10,7 +10,6 @@ const getDatos = new Promise((resolve, reject) => {
 
 function ItemDetailContainer() {
     const { id } = useParams()
-    console.log(id);
     const [data, setData] = useState("id")
 
     useEffect(() => {
@@ -20,20 +19,14 @@ function ItemDetailContainer() {
             .finally(() => {
                 console.log("final de promesa")
             })
-
     }, [id])
-    function addToCart(cant) {
-        alert(`Has agregado ${cant} productos al carrito`)
-    }
+
 
     return (
         <>
-            {console.log(data)}
-            {
-                data ?
-                    <ItemDetail prod={data ? data : ""} addToCart={addToCart} /> :
-                    <></>
-            }
+            {/* {console.log(data)} */}
+            {data ?
+                <ItemDetail prod={data ? data : ""} /> : <></>}
         </>
     )
 

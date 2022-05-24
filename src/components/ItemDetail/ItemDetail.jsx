@@ -2,17 +2,22 @@ import "./itemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
 import { useState } from "react"
 import { Link as LinkRouter } from "react-router-dom"
+import { useContextApp } from "../../context/ContextApp"
+
 
 
 
 function ItemDetail({ prod }) {
-
+    const { addToCart } = useContextApp()
     const [inCart, setInCart] = useState(false)
 
-    function addToCart(cant) {
+    function agregar(cant) {
         // alert(`Has agregado ${cant} productos al carrito`)
         setInCart(true)
+        addToCart({ ...prod, cantidad: cant })
     }
+
+
     return (
         <div className="detalle">
             <h1 className="detalle__Title">Detalle</h1>
@@ -23,7 +28,6 @@ function ItemDetail({ prod }) {
                 <h2> {prod.title}</h2>
                 <p>Price: ${prod.price}</p>
                 <p>Stock: {prod.stock}u</p>
-
                 <p>Description: {prod.description}</p>
                 {inCart ? (
                     <>
@@ -31,7 +35,7 @@ function ItemDetail({ prod }) {
                         <LinkRouter to="/" className="detalle__btn"> Seguir comprando </LinkRouter>
                     </>
                 ) : (
-                    <ItemCount stock={prod.stock} initial={1} addToCart={addToCart} />
+                    <ItemCount stock={prod.stock} initial={1} agregar={agregar} />
                 )}
             </div>
         </div>
