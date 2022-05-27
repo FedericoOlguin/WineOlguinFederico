@@ -1,5 +1,5 @@
 .itemCart {
-  width: 40%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   background-color: gray;
@@ -25,4 +25,9 @@
 
 .itemCart__bodyContainer p {
   margin: 0;
+}
+
+.buttonDeleteItem {
+  color: white;
+  font-size: 20rem;
 }

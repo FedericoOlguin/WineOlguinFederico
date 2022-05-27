@@ -11,11 +11,18 @@ const ContextAppProvider = ({ children }) => {
     // const [productos, setProductos] = useState([])
     const [cart, setCart] = useState([])
 
+    function cantidad() {
+        let cantidad = cart?.map(item => item.cantidad).reduce((acc, valActual) => acc + valActual, 0)
+        return cantidad
+    }
+    function totalCompra() {
+        let total = cart?.map(item => item.cantidad * item.price).reduce((acc, valActual) => acc + valActual, 0)
+        return total
+    }
 
     function addToCart(prod) {
         // primero se validda si el producto esta en el carrito
         if (isInCart(prod.id)) {
-
             let producto = cart.find(element => element.id === prod.id)
             // Estando el producto en el carrito se comprueba que la cantidad a agregar este en stock y pasa a agregarse la cantidad 
             if (producto.cantidad < producto.stock && producto.cantidad + prod.cantidad < producto.stock) {
@@ -29,15 +36,12 @@ const ContextAppProvider = ({ children }) => {
                     ) :
                     (
                         alert("Solo se agregaron " + agregar + " productos al carrito debido a que no hay mas stock")
-
                     )
             }
-
         } else {
             setCart([...cart, prod])
         }
     }
-
 
     function deletToCart(id) {
         setCart(cart.filter(prod => prod.id !== id))
@@ -49,7 +53,6 @@ const ContextAppProvider = ({ children }) => {
         return (cart?.find(element => element.id === id)) ? true : false
     }
 
-
     function emptyCart() {
         setCart([])
     }
@@ -60,7 +63,9 @@ const ContextAppProvider = ({ children }) => {
             addToCart,
             deletToCart,
             isInCart,
-            emptyCart
+            emptyCart,
+            cantidad,
+            totalCompra
         }}>
             {children}
         </ContextApp.Provider >

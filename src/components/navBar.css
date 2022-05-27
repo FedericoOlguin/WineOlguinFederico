@@ -54,3 +54,6 @@
   display: flex;
   justify-content: end;
 }
+.logo {
+  width: 5rem;
+}

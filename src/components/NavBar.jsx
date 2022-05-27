@@ -2,9 +2,7 @@ import React from "react";
 import { Link as LinkRouter } from "react-router-dom"
 import "./navBar.css"
 import CartWidget from "./CartWidget/CartWidget";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
-
+import Logo from "../assets/imagenes/LogoWine.svg"
 function NavBar() {
 
 
@@ -12,7 +10,7 @@ function NavBar() {
         <nav className="nav">
             <div className="nav__containerLogo">
                 <LinkRouter to="/">
-                <CartWidget />
+                    <img src={Logo} alt="LOGO" className="logo" />
                 </LinkRouter>
                 <h1>Wine Shop</h1>
             </div>
@@ -27,7 +25,7 @@ function NavBar() {
             </div>
             <div className="nav__containerLinks">
                 <ul className="nav__ul">
-                    <li> <LinkRouter to="/cart"><ShoppingCartIcon /></LinkRouter></li>
+                    <CartWidget />
                 </ul>
 
             </div>
