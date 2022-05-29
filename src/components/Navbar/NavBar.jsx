@@ -1,8 +1,8 @@
 import React from "react";
 import { Link as LinkRouter } from "react-router-dom"
 import "./navBar.css"
-import CartWidget from "./CartWidget/CartWidget";
-import Logo from "../assets/imagenes/LogoWine.svg"
+import CartWidget from "../CartWidget/CartWidget";
+import Logo from "../../assets/imagenes/LogoWine.svg"
 function NavBar() {
 
 
@@ -19,8 +19,9 @@ function NavBar() {
                     <li> <LinkRouter to="/">Home</LinkRouter></li>
                     {/* <li> <a href="#">Sobre Nosotros</a></li> */}
                     {/* <li> <LinkRouter to="/tienda">Tienda</LinkRouter></li> */}
-                    <li> <LinkRouter to="/category/pantalon">Pantalon</LinkRouter></li>
-                    <li> <LinkRouter to="/category/campera">Campera</LinkRouter></li>
+                    <li> <LinkRouter to="/category/Tinto">Tintos</LinkRouter></li>
+                    <li> <LinkRouter to="/category/Blanco">Blancos</LinkRouter></li>
+                    {/* <li> <LinkRouter to="/category/Blend">Blends</LinkRouter></li> */}
                 </ul>
             </div>
             <div className="nav__containerLinks">

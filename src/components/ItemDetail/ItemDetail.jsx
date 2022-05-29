@@ -3,7 +3,7 @@ import ItemCount from "../ItemCount/ItemCount"
 import { useState } from "react"
 import { Link as LinkRouter } from "react-router-dom"
 import { useContextApp } from "../../context/ContextApp"
-
+import LoadingProgress from "../../components/LoadingProgress/LoadingProgress"
 
 
 
@@ -17,28 +17,40 @@ function ItemDetail({ prod }) {
         addToCart({ ...prod, cantidad: cant })
     }
 
+    // console.log(prod);
 
     return (
-        <div className="detalle">
-            <h1 className="detalle__Title">Detalle</h1>
-            <div className="dettalle__igmContainer">
-                <img className="detalle__img" src={prod.pictureUrl} alt="imgProd" />
-            </div>
-            <div className="detalle__bodyContainer">
-                <h2> {prod.title}</h2>
-                <p>Price: ${prod.price}</p>
-                <p>Stock: {prod.stock}u</p>
-                <p>Description: {prod.description}</p>
-                {inCart ? (
-                    <>
-                        <LinkRouter to="/cart" className="detalle__btn">Finalizar mi compra</LinkRouter>
-                        <LinkRouter to="/" className="detalle__btn"> Seguir comprando </LinkRouter>
-                    </>
-                ) : (
-                    <ItemCount stock={prod.stock} initial={1} agregar={agregar} />
-                )}
-            </div>
-        </div>
+        <>
+            {prod !== "id" ? (
+
+                <div className="detalle">
+                    <h1 className="detalle__Title">Detalle</h1>
+                    <div className="dettalle__igmContainer">
+                        <img className="detalle__img" src={prod.pictureUrl} alt="imgProd" />
+                    </div>
+                    <div className="detalle__bodyContainer">
+                        <h2> {prod.title}</h2>
+                        <p>Price: ${prod.price}</p>
+                        <p>Stock: {prod.stock}u</p>
+                        <p>Description: {prod.description}</p>
+                        {inCart ? (
+                            <>
+                                <LinkRouter to="/cart" className="detalle__btn">Finalizar mi compra</LinkRouter>
+                                <LinkRouter to="/" className="detalle__btn"> Seguir comprando </LinkRouter>
+                            </>
+                        ) : (
+                            <ItemCount stock={prod.stock} initial={1} agregar={agregar} />
+                        )}
+                    </div>
+
+                </div>
+            ) : (
+                <>
+                <h2>Lading...</h2>
+                    <LoadingProgress />
+                </>
+            )}
+        </>
     )
 }
 

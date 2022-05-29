@@ -60,6 +60,8 @@ const ContextAppProvider = ({ children }) => {
     return (
         <ContextApp.Provider value={{
             cart,
+            // productos,
+            // setProductos,
             addToCart,
             deletToCart,
             isInCart,

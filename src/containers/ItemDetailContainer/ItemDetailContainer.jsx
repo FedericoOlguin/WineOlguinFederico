@@ -1,25 +1,26 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Datos from "../../assets/Datos"
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
-const getDatos = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(Datos)
-    }, 2000)
-})
+// import { useContextApp } from "../../context/ContextApp";
+import { getDoc, getFirestore, doc } from "firebase/firestore"
+
+
+
 
 function ItemDetailContainer() {
     const { id } = useParams()
     const [data, setData] = useState("id")
+    // const { productos } = useContextApp()
 
     useEffect(() => {
-        getDatos
-            .then(res => setData(res.find(element => element.id.toString() === id)))
-            .catch(err => console.log(err))
-            .finally(() => {
-                console.log("final de promesa")
-            })
-    }, [id])
+        const db = getFirestore()
+        const dbQuery = doc(db, "productos", id)
+        getDoc(dbQuery).then(res => {
+            setData({ id: res.id, ...res.data() })
+        })
+
+    }, [])
+
 
 
     return (
