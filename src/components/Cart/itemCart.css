@@ -6,12 +6,13 @@
   margin: 2rem 0;
   max-height: 12rem;
   padding: 0 1rem;
+  border-radius: 5px;
 }
 .itemCart__h2 {
   margin: 0;
 }
 .itemCart__igmContainer {
-  width: 50%;
+  width: 30%;
   display: flex;
   /* justify-content: center; */
 }
@@ -29,5 +30,5 @@
 
 .buttonDeleteItem {
   color: white;
-  font-size: 20rem;
+  font-size: 2rem;
 }

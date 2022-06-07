@@ -21,8 +21,8 @@ function ItemCart({ prod, eliminar }) {
                 <p>Stock: {prod.stock}u</p>
                 <div>
                     {/* <RemoveCircleIcon onClick={() => eliminar(prod.id)} /> */}
-                    <DeleteOutlineIcon className="buttonDeleteItem" onClick={() => eliminar(prod.id)} />
                     {/* <AddCircleIcon onClick={() => eliminar(prod.id)} /> */}
+                    <DeleteOutlineIcon className="buttonDeleteItem" onClick={() => eliminar(prod.id)} />
                 </div>
             </div>
         </div>

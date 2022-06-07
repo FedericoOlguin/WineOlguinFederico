@@ -8,6 +8,7 @@ function Item({ prod }) {
 
     return (
         <div className="producto">
+            {prod.stock < 1 && <span className="soldOut">Sin Stock</span>}
             <h2>{prod.title}</h2>
             <img className="productoImg" src={prod.pictureUrl} alt="prodPhoto" />
             <p>Price: ${prod.price}</p>
@@ -15,9 +16,6 @@ function Item({ prod }) {
             <button> <LinkRouter to={`/item/${prod.id}`} >Detalle</LinkRouter></button>
         </div>
     )
-
-
-
 }
 
 export default Item

@@ -7,7 +7,7 @@ export default function LoadingProgress() {
     return (
         <>
             <h2>Lading...</h2>
-            <CircularProgress disableShrink />;
+            <CircularProgress disableShrink />
         </>
     )
 }
