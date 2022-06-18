@@ -22,17 +22,18 @@ function ItemDetail({ prod }) {
     return (
         <>
             {prod !== "id" ? (
-
                 <div className="detalle">
-                    <h1 className="detalle__Title">Detalle</h1>
+                    <h1 className="detalle__Title">Detail</h1>
                     <div className="dettalle__igmContainer">
                         <img className="detalle__img" src={prod.pictureUrl} alt="imgProd" />
                     </div>
                     <div className="detalle__bodyContainer">
                         <h2> {prod.title}</h2>
-                        <p>Price: ${prod.price}</p>
-                        <p>Stock: {prod.stock}u</p>
-                        <p>Description: {prod.description}</p>
+                        <p> {prod.description}</p>
+                        <div className="div__row">
+                            <p>Price: ${prod.price}</p>
+                            <p>Stock: {prod.stock}u</p>
+                        </div>
                         {inCart ? (
                             <>
                                 <LinkRouter to="/cart" className="detalle__btn">Finalizar mi compra</LinkRouter>
@@ -42,11 +43,10 @@ function ItemDetail({ prod }) {
                             <ItemCount stock={prod.stock} initial={1} agregar={agregar} />
                         )}
                     </div>
-
                 </div>
             ) : (
                 <>
-                <h2>Lading...</h2>
+                    {/* <h2>Lading...</h2> */}
                     <LoadingProgress />
                 </>
             )}

@@ -1,47 +1,56 @@
 .nav {
   display: flex;
-  background-color: rgba(104, 103, 184, 0.486);
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, rgba(28, 27, 37, 0.699), transparent);
   width: 100%;
   align-items: stretch;
-  margin-bottom: 12rem;
-  justify-content: space-between;
+  margin-bottom: 7rem;
+  position: relative;
+  /* justify-content: space-between; */
 }
+
 .nav__containerLogo {
   display: flex;
-  width: 20rem;
+  width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
+  padding-top: 0.5rem;
 }
 .nav__containerLogo h1 {
   font-weight: 900;
   font-size: 2rem;
+  color: white;
+  margin: 0 0 0.5rem 0;
 }
 .nav__ul {
   display: flex;
   list-style-type: none;
   align-items: center;
-  height: 100%;
+  justify-content: center;
+  /* height: 100%; */
+  width: 100%;
   margin: 0;
+  padding: 0;
 }
 .nav__ul li {
   margin: 0 0.5rem;
   display: flex;
-  align-items: stretch;
   height: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 .nav__ul li a {
   text-decoration: none;
-  color: black;
   font-weight: 800;
   display: flex;
   padding: 1rem;
   transition: all 0.5s ease;
 }
 .nav__ul li a:hover {
-  background-color: rgb(71, 70, 70);
+  /* background-color: rgb(71, 70, 70); */
+  box-shadow: 5px 5px 10px black;
+  filter: drop-shadow(0px 5px 0px rgb(78, 54, 177));
   border-radius: 5px;
   color: white;
 }
@@ -50,10 +59,44 @@
 }
 
 .nav__containerLinks {
-  width: 40rem;
+  min-width: 100%;
   display: flex;
-  justify-content: end;
+  transition: all 1s ease-in-out;
 }
+
 .logo {
-  width: 5rem;
+  width: 4rem;
+}
+
+.hamburger_menu {
+  display: none !important;
+}
+@media (max-width: 540px) {
+  .nav__containerLinks {
+    display: none;
+    width: 100%;
+  }
+  .nav__ul {
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+  .nav__ul li a{
+    padding: 0.5rem;
+  }
+  .nav__containerLinks.expanded {
+    display: flex;
+    background-color: rgb(56, 55, 54);
+  }
+  .hamburger_menu {
+    display: block !important;
+    margin-left: auto;
+    position: absolute;
+    top: 3rem;
+    right: 25px;
+    transform: translateY(-50%);
+    display: none;
+  }
+  .hamburger_menu:hover {
+    background-color: #2642af;
+  }
 }

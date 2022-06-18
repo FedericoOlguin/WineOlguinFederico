@@ -16,7 +16,7 @@ function ItemCart({ prod, eliminar }) {
             </div>
             <div className="itemCart__bodyContainer">
                 <h2 className="itemCart__h2"> {prod.title}</h2>
-                <p>Cantidad: <span style={{ color: "white" }}> {prod.cantidad} </span></p>
+                <p>Quantity: <span style={{ color: "white" }}> {prod.cantidad}u </span></p>
                 <p>Price: ${prod.price}</p>
                 <p>Stock: {prod.stock}u</p>
                 <div>

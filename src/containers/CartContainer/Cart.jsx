@@ -1,12 +1,15 @@
 import { useContextApp } from "../../context/ContextApp"
-import ItemCart from "./itemCart"
+import ItemCart from "../../components/ItemCart/itemCart"
 import "./cart.css"
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import { Link as LinkRouter } from "react-router-dom"
 import { getFirestore, writeBatch, addDoc, collection, query, where, documentId, getDocs } from "firebase/firestore"
+import FormCart from "../../components/FormCart/FormCart";
+import { useState } from "react";
 
 function Cart() {
     const { cart, deletToCart, emptyCart, totalCompra } = useContextApp()
+    const [buyer, setBuyer] = useState()
 
 
     function eliminar(id) {
@@ -16,7 +19,8 @@ function Cart() {
 
     async function addOrden() {
         let order = {
-            buyer: { name: "Federico", email: "ejemplo@gmail.com", phone: "265432195" },
+            buyer: { ...buyer },
+            // buyer: { name: "Federico", email: "ejemplo@gmail.com", phone: "265432195" },
             total: totalCompra(),
             productos: cart.map(prod => {
                 return {
@@ -53,14 +57,15 @@ function Cart() {
 
     return (
         <>
-            <h1>Carrito de compras</h1>
+            {/* {console.log(buyer)} */}
+            <h1>Shopping cart</h1>
             <div className="cartContainer">
                 {cart.length < 1 ? (
 
                     <div className="cartContainer__checkout">
-                        <h2>No hay productos en el carrito</h2>
                         <ProductionQuantityLimitsIcon className="imgCartEmpty" style={{ fontSize: "20rem" }} />
-                        <LinkRouter to="/" className="aTienda"> Seguir comprando</LinkRouter>
+                        <h2>Cart is empty</h2>
+                        <LinkRouter to="/" className="aTienda"> Keep shopping</LinkRouter>
                     </div>
 
                 ) : (
@@ -69,14 +74,20 @@ function Cart() {
                             {cart?.map(prod =>
                                 <ItemCart key={prod.id} prod={prod} eliminar={eliminar} />
                             )}
-                            <button onClick={() => emptyCart()}>Vaciar carrito</button>
+                            <button className="btn" onClick={() => emptyCart()}>Empty cart</button>
                         </div>
                         <div className="cartContainer__checkout">
-                            <h2>Finalizar compra</h2>
+                            <h2>Checkout</h2>
                             <h3>Total: ${totalCompra()}</h3>
-                            <div>
-                                <button onClick={() => addOrden()}  >Pedir</button>
-                            </div>
+
+                            {buyer === undefined ? (
+                                <FormCart setBuyer={setBuyer} />
+                            ) : (
+                                <div >
+                                    <button onClick={() => addOrden()} >Go to checkout</button>
+                                </div>
+                            )}
+
                         </div>
                     </>
                 )}

@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/Navbar/NavBar';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer"
-import Cart from './components/Cart/Cart';
+import Cart from './containers/CartContainer/Cart';
 import ContextAppProvider from './context/ContextApp';
 
 
@@ -16,8 +16,8 @@ function App() {
         <div className="App">
           <NavBar />
           <Routes>
-            <Route path='/' element={<ItemListContainer greeting="Bienvenidos" />} />
-            <Route path='/category/:categ' element={<ItemListContainer greeting="Bienvenidos" />} />
+            <Route path='/' element={<ItemListContainer greeting="Welcome to our shop" />} />
+            <Route path='/category/:categ' element={<ItemListContainer greeting="Welcome to our shop" />} />
             <Route path='/item/:id' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/*' element={<Navigate to="/" replace />} />

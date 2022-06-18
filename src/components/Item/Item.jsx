@@ -10,10 +10,13 @@ function Item({ prod }) {
         <div className="producto">
             {prod.stock < 1 && <span className="soldOut">Sin Stock</span>}
             <h2>{prod.title}</h2>
-            <img className="productoImg" src={prod.pictureUrl} alt="prodPhoto" />
+            <div className="prueba">
+                <img className="productoImg" src={prod.pictureUrl} alt="prodPhoto" />
+
+            </div>
             <p>Price: ${prod.price}</p>
             {/* <p>Description: {prod.description}</p> */}
-            <button> <LinkRouter to={`/item/${prod.id}`} >Detalle</LinkRouter></button>
+            <LinkRouter className="btn" to={`/item/${prod.id}`} >Detalle</LinkRouter>
         </div>
     )
 }
