@@ -1,0 +1,33 @@
+.form__container {
+  min-height: 40%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(10, 10, 10, 0.651);
+  box-shadow: 10px 10px 20px black;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.label__form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.3rem;
+}
+.span {
+  margin-right: 0.5rem;
+}
+.input__form{
+  color: black;
+}
+.no_coincide {
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
+.input_error {
+  border: 2px solid red;
+  color: black;
+}

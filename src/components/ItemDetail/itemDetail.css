@@ -1,12 +1,13 @@
 .detalle {
   display: flex;
-  /* max-height: 25rem; */
+  max-height: 25rem;
   margin: 5rem 0;
-  background-color: rgba(10, 10, 10, 0.651);
   max-width: 80%;
   padding: 1rem;
   border-radius: 5px;
+  background-color: rgba(10, 10, 10, 0.651);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.726);
+  /* margin-top: 25rem; */
 }
 
 .detalle__Title {

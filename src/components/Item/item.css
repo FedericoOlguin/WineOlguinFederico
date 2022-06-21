@@ -3,6 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 2rem;
+  min-height: 50vh;
 }
 
 .producto {

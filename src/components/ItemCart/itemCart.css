@@ -2,7 +2,9 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-color: gray;
+  /* background-color: gray; */
+  background-color: rgba(10, 10, 10, 0.651);
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.726);
   margin: 2rem 0;
   max-height: 12rem;
   padding: 0 1rem;
@@ -14,6 +16,12 @@
 .itemCart__igmContainer {
   width: 30%;
   display: flex;
+  background-color: white;
+  justify-content: center;
+  /* border-radius: 150px; */
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  overflow: hidden;
   /* justify-content: center; */
 }
 

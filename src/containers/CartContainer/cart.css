@@ -15,7 +15,9 @@
   overflow-y: scroll;
   padding: 0.5rem;
 }
-
+.title__ShoppingCart {
+  margin-top: 15rem;
+}
 .cartContainer__products::-webkit-scrollbar {
   width: 7px;
 }
@@ -48,6 +50,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.aTienda:hover{
-  transform: scale(1.1,1.1);
+.aTienda:hover {
+  transform: scale(1.1, 1.1);
 }

@@ -7,6 +7,7 @@ import { getDoc, getFirestore, doc } from "firebase/firestore"
 
 
 
+
 function ItemDetailContainer() {
     const { id } = useParams()
     const [data, setData] = useState("id")
@@ -24,11 +25,10 @@ function ItemDetailContainer() {
 
 
     return (
-        <>
-            {/* {console.log(data)} */}
+        <div className="detalle__container">
             {data ?
                 <ItemDetail prod={data ? data : ""} /> : <></>}
-        </>
+        </div>
     )
 
 }

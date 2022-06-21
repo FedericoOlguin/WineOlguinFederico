@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import ItemList from "../../components/Item/ItemList"
 import { useParams } from "react-router-dom"
 import { getDocs, getFirestore, collection, query, where } from "firebase/firestore"
+import FotoHero from "../../assets/imagenes/HeroWine.jpg"
 
 
 
@@ -30,7 +31,11 @@ function ItemListContainer({ greeting }) {
 
     return (
         <>
-            <h1>{greeting}</h1>
+            <div className="hero">
+                <img src={FotoHero} alt="" className="photoHero" />
+                <h1 className="titleHero">{greeting}</h1>
+            </div>
+            <h2>Our wines</h2>
             <ItemList productos={productos} />
         </>
     )

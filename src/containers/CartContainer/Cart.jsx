@@ -10,6 +10,7 @@ import { useState } from "react";
 function Cart() {
     const { cart, deletToCart, emptyCart, totalCompra } = useContextApp()
     const [buyer, setBuyer] = useState()
+    const [idOrder, setIdOrder] = useState()
 
 
     function eliminar(id) {
@@ -34,31 +35,35 @@ function Cart() {
         }
 
         const db = getFirestore()
+        const batch = writeBatch(db)
 
         let queryDb = collection(db, "orders")
         addDoc(queryDb, order)
             .then(res => {
+                setIdOrder(res.id)
+                window.location = `/order/${res.id}`
                 alert("Pedido realizado con exito. Codigo de operacion: " + res.id)
             })
             .catch((err) => console.log(err))
-            .finally((res) => {
+            .finally(() => {
                 emptyCart()
             })
 
         const queryCollectionStock = collection(db, "productos")
-        const queryUpdateStock = query(queryCollectionStock,
+        const queryUpdateStock = await query(queryCollectionStock,
             where(documentId(), "in", cart.map(p => p.id)))
-        const batch = writeBatch(db)
         await getDocs(queryUpdateStock)
             .then(resp => resp.docs.forEach(res => batch.update(res.ref, { stock: res.data().stock - cart.find(prod => prod.id === res.id).cantidad })))
         batch.commit()
             .catch(err => console.log(err))
+         
+
     }
 
     return (
         <>
             {/* {console.log(buyer)} */}
-            <h1>Shopping cart</h1>
+            <h1 className="title__ShoppingCart">Shopping cart</h1>
             <div className="cartContainer">
                 {cart.length < 1 ? (
 
@@ -74,17 +79,17 @@ function Cart() {
                             {cart?.map(prod =>
                                 <ItemCart key={prod.id} prod={prod} eliminar={eliminar} />
                             )}
-                            <button className="btn" onClick={() => emptyCart()}>Empty cart</button>
                         </div>
                         <div className="cartContainer__checkout">
                             <h2>Checkout</h2>
                             <h3>Total: ${totalCompra()}</h3>
+                            <button className="btn" onClick={() => emptyCart()}>Empty cart</button>
 
                             {buyer === undefined ? (
                                 <FormCart setBuyer={setBuyer} />
                             ) : (
                                 <div >
-                                    <button onClick={() => addOrden()} >Go to checkout</button>
+                                    <button className="btn" onClick={() => addOrden()} >Go to checkout</button>
                                 </div>
                             )}
 

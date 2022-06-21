@@ -6,6 +6,8 @@ import ItemListContainer from './containers/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer"
 import Cart from './containers/CartContainer/Cart';
 import ContextAppProvider from './context/ContextApp';
+import Footer from './components/Footer/Footer';
+import ItemOrderContainer from './containers/ItemOrderContainer/ItemOrderContainer';
 
 
 
@@ -21,7 +23,9 @@ function App() {
             <Route path='/item/:id' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/*' element={<Navigate to="/" replace />} />
+            <Route path='/order/:idOrder' element={<ItemOrderContainer />} />
           </Routes>
+          <Footer />
         </div>
       </ContextAppProvider >
     </BrowserRouter>

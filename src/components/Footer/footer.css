@@ -1,0 +1,17 @@
+.footer__container {
+  /* background-color: aqua; */
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    to top,
+    rgba(28, 27, 37, 0.699),
+    rgba(28, 27, 37, 0.062)
+  );
+}
+
+.footer__container h5 {
+  margin: 0;
+}

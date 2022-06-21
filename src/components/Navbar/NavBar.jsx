@@ -20,20 +20,11 @@ function NavBar() {
             }>
                 <ul className="nav__ul">
                     <li> <LinkRouter to="/">Home</LinkRouter></li>
-                    {/* <li> <a href="#">Sobre Nosotros</a></li> */}
-                    {/* <li> <LinkRouter to="/tienda">Tienda</LinkRouter></li> */}
                     <li> <LinkRouter to="/category/Tinto">Red Wines</LinkRouter></li>
                     <li> <LinkRouter to="/category/Blanco">White Wines</LinkRouter></li>
-                    {/* <li> <LinkRouter to="/category/Blend">Blends</LinkRouter></li> */}
                     <CartWidget />
                 </ul>
             </div>
-            {/* <div className="nav__containerLinks">
-                <ul className="nav__ul">
-                <CartWidget />
-                </ul>
-
-            </div> */}
         </nav>
 
     )

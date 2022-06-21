@@ -36,8 +36,8 @@ function ItemDetail({ prod }) {
                         </div>
                         {inCart ? (
                             <>
-                                <LinkRouter to="/cart" className="detalle__btn">Finalizar mi compra</LinkRouter>
-                                <LinkRouter to="/" className="detalle__btn"> Seguir comprando </LinkRouter>
+                                <LinkRouter to="/cart" className="detalle__btn">Checkout</LinkRouter>
+                                <LinkRouter to="/" className="detalle__btn"> Keep buying </LinkRouter>
                             </>
                         ) : (
                             <ItemCount stock={prod.stock} initial={1} agregar={agregar} />

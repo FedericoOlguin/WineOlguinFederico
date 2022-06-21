@@ -8,7 +8,7 @@ function Item({ prod }) {
 
     return (
         <div className="producto">
-            {prod.stock < 1 && <span className="soldOut">Sin Stock</span>}
+            {prod.stock < 1 && <span className="soldOut">Sold out</span>}
             <h2>{prod.title}</h2>
             <div className="prueba">
                 <img className="productoImg" src={prod.pictureUrl} alt="prodPhoto" />
@@ -16,7 +16,7 @@ function Item({ prod }) {
             </div>
             <p>Price: ${prod.price}</p>
             {/* <p>Description: {prod.description}</p> */}
-            <LinkRouter className="btn" to={`/item/${prod.id}`} >Detalle</LinkRouter>
+            <LinkRouter className="btn" to={`/item/${prod.id}`} >Detail</LinkRouter>
         </div>
     )
 }
