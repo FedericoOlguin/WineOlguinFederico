@@ -6,7 +6,7 @@ Wine shop es un E-commerce orientado a vinos de alta calidad. Se busca una naveg
 
 ## Demo
 
-https://resplendent-boba-c301ed.netlify.app/
+https://darling-khapse-9a1382.netlify.app/
 
 ## Tecnología
 
