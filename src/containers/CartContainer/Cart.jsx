@@ -51,7 +51,7 @@ function Cart() {
         batch.commit()
             .catch(err => console.log(err))
     }
-
+    
     return (
         <>
             <h1 className="title__ShoppingCart">Shopping cart</h1>
