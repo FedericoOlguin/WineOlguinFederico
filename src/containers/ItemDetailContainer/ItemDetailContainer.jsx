@@ -5,8 +5,6 @@ import { getDoc, getFirestore, doc } from "firebase/firestore"
 
 
 
-
-
 function ItemDetailContainer() {
     const { id } = useParams()
     const [data, setData] = useState("id")
@@ -17,7 +15,6 @@ function ItemDetailContainer() {
         getDoc(dbQuery).then(res => {
             setData({ id: res.id, ...res.data() })
         })
-
     }, [])
 
     return (
