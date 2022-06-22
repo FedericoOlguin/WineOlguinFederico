@@ -1,38 +1,51 @@
 .order__card {
-    width: 50%;
-    /* background-color: black; */
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    justify-content: space-between;
-    background-color: rgba(10, 10, 10, 0.651);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.726);
-    margin-bottom: 1rem;
-    border-radius: 5px;
+  width: 50%;
+  /* background-color: black; */
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: space-between;
+  background-color: rgba(10, 10, 10, 0.651);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.726);
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.div__right {
+  display: flex;
+  justify-content: flex-end;
+}
+.div__left {
+  display: flex;
+  justify-content: left;
+}
+.div__left h3 {
+  margin-right: 1rem;
+}
+
+.div__right p {
+  background-color: rebeccapurple;
+  border-radius: 5px;
+  padding: 0.3rem;
+}
+
+.tabla__order {
+  width: 90%;
+  align-self: center;
+  background-color: rgba(128, 128, 128, 0.267);
+  border-radius: 5px;
+}
+@media (max-width: 600px) {
+  .hidden {
+    display: none;
   }
-  
-  .div__right {
-    display: flex;
-    justify-content: flex-end;
+}
+@media (max-width: 1000px) {
+  .order__card {
+    width: 90%;
   }
   .div__left {
-    display: flex;
-    justify-content: left;
+    flex-direction: column;
   }
-  .div__left h3 {
-    margin-right: 1rem;
-  }
-  
-  .div__right p {
-    background-color: rebeccapurple;
-    border-radius: 5px;
-    padding: 0.3rem;
-  }
-  
-  .tabla__order {
-    width: 90%;
-    align-self: center;
-    background-color: rgba(128, 128, 128, 0.267);
-    border-radius: 5px;
-  }
+}

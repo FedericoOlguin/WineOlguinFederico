@@ -53,3 +53,36 @@
 .aTienda:hover {
   transform: scale(1.1, 1.1);
 }
+
+@media (max-width: 1140px) {
+  .cartContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+    height: auto;
+  }
+  .cartContainer__products {
+    width: 90%;
+    min-height: 35rem;
+  }
+  .cartContainer__checkout {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cartContainer__checkout {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cartContainer {
+    width: 100%;
+    padding: 0;
+  }
+  .cartContainer__products {
+    padding: 0;
+  }
+}

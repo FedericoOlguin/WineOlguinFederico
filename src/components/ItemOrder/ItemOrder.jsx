@@ -16,7 +16,7 @@ function ItemOrder({ order }) {
             <table className="tabla__order" >
                 <tbody>
                     <tr>
-                        <th>Product id:</th>
+                        <th className="hidden">Product id:</th>
                         <th>Title:</th>
                         <th>Quantity:</th>
                         <th>Total per item:</th>
@@ -24,7 +24,7 @@ function ItemOrder({ order }) {
                     {order?.productos.map((prod) => {
                         return (
                             <tr key={prod.id}>
-                                <td> {prod.id}</td>
+                                <td className="hidden"> {prod.id}</td>
                                 <td> {prod.title}</td>
                                 <td>{prod.cantidad}</td>
                                 <td>{prod.totalItem}</td>

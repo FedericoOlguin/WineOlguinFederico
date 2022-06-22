@@ -18,7 +18,7 @@
 .span {
   margin-right: 0.5rem;
 }
-.input__form{
+.input__form {
   color: black;
 }
 .no_coincide {
@@ -30,4 +30,17 @@
 .input_error {
   border: 2px solid red;
   color: black;
+}
+
+@media (max-width: 1000px) {
+  .form__container {
+    width: 85%;
+  }
+  .input__form,
+  .label__form {
+    width: 90%;
+    display: flex;
+    align-items: center;
+  }
+ 
 }

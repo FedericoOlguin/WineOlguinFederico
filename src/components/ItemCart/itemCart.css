@@ -40,3 +40,13 @@
   color: white;
   font-size: 2rem;
 }
+
+@media (max-width: 1000px) {
+  .itemCart {
+    max-height: 20rem;
+    justify-content: space-between;
+  }
+  .itemCart__bodyContainer {
+    width: 80%;
+  }
+}
