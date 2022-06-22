@@ -4,6 +4,7 @@ import "./navBar.css"
 import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../../assets/imagenes/LogoWine.svg"
 import ListIcon from '@mui/icons-material/List';
+
 function NavBar() {
     const [expanded, setExpanded] = useState(false)
     return (
@@ -26,7 +27,6 @@ function NavBar() {
                 </ul>
             </div>
         </nav>
-
     )
 }
 

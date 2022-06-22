@@ -55,7 +55,7 @@ body {
   height: 60vh;
   position: relative;
   margin-bottom: 5rem;
-  z-index: -1;
+  /* z-index: -1; */
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -64,7 +64,6 @@ body {
 }
 
 .photoHero {
-  z-index: -1;
   position: absolute;
   left: 0;
   top: 0;
@@ -74,10 +73,9 @@ body {
   filter: brightness(0.5);
 }
 .titleHero {
-  /* position: absolute; */
-  /* top: 50%; */
-  /* right: 50%; */
+
   margin-bottom: 5rem;
+  z-index: 5;
 }
 
 .App-header {

@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/Navbar/NavBar';
@@ -19,7 +18,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route path='/' element={<ItemListContainer greeting="Welcome to our shop" />} />
-            <Route path='/category/:categ' element={<ItemListContainer greeting="Welcome to our shop" />} />
+            <Route path='/category/:category' element={<ItemListContainer greeting="Welcome to our shop" />} />
             <Route path='/item/:id' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/*' element={<Navigate to="/" replace />} />

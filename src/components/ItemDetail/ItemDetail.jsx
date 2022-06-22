@@ -12,12 +12,9 @@ function ItemDetail({ prod }) {
     const [inCart, setInCart] = useState(false)
 
     function agregar(cant) {
-        // alert(`Has agregado ${cant} productos al carrito`)
         setInCart(true)
         addToCart({ ...prod, cantidad: cant })
     }
-
-    // console.log(prod);
 
     return (
         <>
@@ -46,7 +43,6 @@ function ItemDetail({ prod }) {
                 </div>
             ) : (
                 <>
-                    {/* <h2>Lading...</h2> */}
                     <LoadingProgress />
                 </>
             )}

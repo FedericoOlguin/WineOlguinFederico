@@ -15,7 +15,6 @@ function Item({ prod }) {
 
             </div>
             <p>Price: ${prod.price}</p>
-            {/* <p>Description: {prod.description}</p> */}
             <LinkRouter className="btn" to={`/item/${prod.id}`} >Detail</LinkRouter>
         </div>
     )

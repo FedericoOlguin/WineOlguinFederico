@@ -1,13 +1,13 @@
 .detalle {
   display: flex;
-  max-height: 25rem;
+  min-height: 25rem;
   margin: 5rem 0;
   max-width: 80%;
   padding: 1rem;
   border-radius: 5px;
   background-color: rgba(10, 10, 10, 0.651);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.726);
-  /* margin-top: 25rem; */
+  margin-top: 20rem;
 }
 
 .detalle__Title {
@@ -18,6 +18,7 @@
 .dettalle__igmContainer {
   width: 50%;
   display: flex;
+  background-color: white;
   justify-content: center;
 }
 .detalle__bodyContainer {
@@ -30,7 +31,7 @@
   margin-bottom: 1rem;
 }
 .detalle__img {
-  object-fit: cover;
+  object-fit: contain;
   width: 15rem;
   margin-right: 1rem;
   border-radius: 5px;
@@ -55,13 +56,15 @@
   .detalle {
     flex-direction: column;
     max-height: auto;
+    align-items: center;
   }
   .detalle__Title {
     writing-mode: horizontal-tb;
     width: 100%;
   }
   .dettalle__igmContainer {
-    width: 100%;
+    width: 50%;
+    height: 15rem;
   }
   .detalle__img {
     width: 90%;

@@ -8,11 +8,11 @@ function ItemList(props) {
     return (
         <div className="contenedorItemList">
             {
-                props.productos.length === 0 ?
+                props.products.length === 0 ?
                     <div>
                         <LoadingProgress />
                     </div> :
-                    props.productos.map(prod => <Item prod={prod} key={prod.id} />)
+                    props.products.map(prod => <Item prod={prod} key={prod.id} />)
             }
         </div>
     )

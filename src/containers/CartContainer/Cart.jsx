@@ -10,18 +10,14 @@ import { useState } from "react";
 function Cart() {
     const { cart, deletToCart, emptyCart, totalCompra } = useContextApp()
     const [buyer, setBuyer] = useState()
-    const [idOrder, setIdOrder] = useState()
-
 
     function eliminar(id) {
-        // console.log(id);
         deletToCart(id)
     }
 
     async function addOrden() {
         let order = {
             buyer: { ...buyer },
-            // buyer: { name: "Federico", email: "ejemplo@gmail.com", phone: "265432195" },
             total: totalCompra(),
             productos: cart.map(prod => {
                 return {
@@ -40,9 +36,7 @@ function Cart() {
         let queryDb = collection(db, "orders")
         addDoc(queryDb, order)
             .then(res => {
-                setIdOrder(res.id)
                 window.location = `/order/${res.id}`
-                alert("Pedido realizado con exito. Codigo de operacion: " + res.id)
             })
             .catch((err) => console.log(err))
             .finally(() => {
@@ -56,23 +50,18 @@ function Cart() {
             .then(resp => resp.docs.forEach(res => batch.update(res.ref, { stock: res.data().stock - cart.find(prod => prod.id === res.id).cantidad })))
         batch.commit()
             .catch(err => console.log(err))
-         
-
     }
 
     return (
         <>
-            {/* {console.log(buyer)} */}
             <h1 className="title__ShoppingCart">Shopping cart</h1>
             <div className="cartContainer">
                 {cart.length < 1 ? (
-
                     <div className="cartContainer__checkout">
                         <ProductionQuantityLimitsIcon className="imgCartEmpty" style={{ fontSize: "20rem" }} />
                         <h2>Cart is empty</h2>
                         <LinkRouter to="/" className="aTienda"> Keep shopping</LinkRouter>
                     </div>
-
                 ) : (
                     <>
                         <div className="cartContainer__products">
@@ -84,7 +73,6 @@ function Cart() {
                             <h2>Checkout</h2>
                             <h3>Total: ${totalCompra()}</h3>
                             <button className="btn" onClick={() => emptyCart()}>Empty cart</button>
-
                             {buyer === undefined ? (
                                 <FormCart setBuyer={setBuyer} />
                             ) : (
@@ -92,7 +80,6 @@ function Cart() {
                                     <button className="btn" onClick={() => addOrden()} >Go to checkout</button>
                                 </div>
                             )}
-
                         </div>
                     </>
                 )}
